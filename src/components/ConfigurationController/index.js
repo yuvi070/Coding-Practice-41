@@ -24,24 +24,27 @@ const ConfigurationController = () => {
         const onClickRight = () => {
           onToggleShowRightNavbar()
         }
+        console.log(showContent)
         return (
           <div className="top-container">
             <div className="top-body">
               <h1>Layout</h1>
-              <form>
+              <fieldset>
                 <div className="checkbox-div">
                   <input
                     type="checkbox"
                     name="1"
+                    checked
                     value="content"
                     id="content"
                     onClick={onClickContent}
                   />
-                  <label htmlFor="content">Content</label>
+                  <label htmlFor="content">Content{showContent}</label>
                 </div>
                 <div className="checkbox-div">
                   <input
                     type="checkbox"
+                    checked
                     id="left-navbar"
                     onClick={onClickLeft}
                   />
@@ -50,12 +53,13 @@ const ConfigurationController = () => {
                 <div className="checkbox-div">
                   <input
                     type="checkbox"
+                    checked
                     id="right-navbar"
                     onClick={onClickRight}
                   />
                   <label htmlFor="right-navbar">Right Navbar</label>
                 </div>
-              </form>
+              </fieldset>
             </div>
           </div>
         )
