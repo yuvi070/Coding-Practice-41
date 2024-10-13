@@ -3,14 +3,11 @@ import ConfigurationContext from '../../context/ConfigurationContext'
 import './index.css'
 
 const ConfigurationController = () => {
-  const add = 10
+  const add = null
   return (
     <ConfigurationContext.Consumer>
       {value => {
         const {
-          showContent,
-          showLeftNavbar,
-          showRightNavbar,
           onToggleShowContent,
           onToggleShowLeftNavbar,
           onToggleShowRightNavbar,
@@ -24,42 +21,39 @@ const ConfigurationController = () => {
         const onClickRight = () => {
           onToggleShowRightNavbar()
         }
-        console.log(showContent)
         return (
           <div className="top-container">
             <div className="top-body">
               <h1>Layout</h1>
-              <fieldset>
-                <div className="checkbox-div">
-                  <input
-                    type="checkbox"
-                    name="1"
-                    checked
-                    value="content"
-                    id="content"
-                    onClick={onClickContent}
-                  />
-                  <label htmlFor="content">Content{showContent}</label>
-                </div>
-                <div className="checkbox-div">
-                  <input
-                    type="checkbox"
-                    checked
-                    id="left-navbar"
-                    onClick={onClickLeft}
-                  />
-                  <label htmlFor="left-navbar">Left Navbar</label>
-                </div>
-                <div className="checkbox-div">
-                  <input
-                    type="checkbox"
-                    checked
-                    id="right-navbar"
-                    onClick={onClickRight}
-                  />
-                  <label htmlFor="right-navbar">Right Navbar</label>
-                </div>
-              </fieldset>
+              <div className="checkbox-div">
+                <input
+                  type="checkbox"
+                  name="1"
+                  defaultChecked
+                  value="content"
+                  id="content"
+                  onClick={onClickContent}
+                />
+                <label htmlFor="content">Content</label>
+              </div>
+              <div className="checkbox-div">
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  id="left-navbar"
+                  onClick={onClickLeft}
+                />
+                <label htmlFor="left-navbar">Left Navbar</label>
+              </div>
+              <div className="checkbox-div">
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  id="right-navbar"
+                  onClick={onClickRight}
+                />
+                <label htmlFor="right-navbar">Right Navbar</label>
+              </div>
             </div>
           </div>
         )

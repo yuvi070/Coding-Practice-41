@@ -1,1 +1,25 @@
 /* Write your CSS here */
+.body-container {
+  height: 38vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.body-div1 {
+  background-color: #e2e8f0;
+  /* flex-grow: 1; */
+  /* width: 40%; */
+  width: 39%;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.body-div2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #64748b;
+  width: 29%;
+  padding: 15px;
+  flex-grow: unset;
+  flex-shrink: unset;
+}
