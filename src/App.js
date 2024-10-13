@@ -4,15 +4,51 @@ import ConfigurationController from './components/ConfigurationController'
 
 import Layout from './components/Layout'
 
+import ConfigurationContext from './context/ConfigurationContext'
+
 import './App.css'
 
 class App extends Component {
+  state = {
+    showContent: true,
+    showLeftNavbar: true,
+    showRightNavbar: true,
+  }
+
+  onToggleShowContent = () => {
+    this.setState(prev => ({
+      showContent: !prev.showContent,
+    }))
+  }
+
+  onToggleShowLeftNavbar = () => {
+    this.setState(prev => ({
+      showLeftNavbar: !prev.showLeftNavbar,
+    }))
+  }
+
+  onToggleShowRightNavbar = () => {
+    this.setState(prev => ({
+      showRightNavbar: !prev.showRightNavbar,
+    }))
+  }
+
   render() {
+    const {showContent, showLeftNavbar, showRightNavbar} = this.state
     return (
-      <div>
+      <ConfigurationContext.Provider
+        value={{
+          showContent,
+          showLeftNavbar,
+          showRightNavbar,
+          onToggleShowContent: () => this.onToggleShowContent,
+          onToggleShowLeftNavbar: () => this.onToggleShowLeftNavbar,
+          onToggleShowRightNavbar: () => this.onToggleShowRightNavbar,
+        }}
+      >
         <ConfigurationController />
         <Layout />
-      </div>
+      </ConfigurationContext.Provider>
     )
   }
 }

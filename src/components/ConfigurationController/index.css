@@ -1,1 +1,11 @@
 /* Write your CSS here */
+.top-container {
+  background-color: grey;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.top-body {
+  width: 80%;
+  margin: auto;
+}
